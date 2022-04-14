@@ -2,6 +2,8 @@ package com.rachein.demo.main.controller;
 
 import com.rachein.demo.entity.RO.LogisticsAddRo;
 import com.rachein.demo.entity.RO.LogisticsUpdateRo;
+import com.rachein.demo.entity.VO.LogisticsInfoVo;
+import com.rachein.demo.entity.VO.ResultVo;
 import com.rachein.demo.main.service.LogisticsService;
 import com.rachein.demo.main.service.ProductService;
 import io.swagger.annotations.Api;
@@ -33,14 +35,14 @@ public class LogisticsManagerController {
 
     @ApiOperation("查询")
     @GetMapping("/{tid}")
-    public void read(@PathVariable String tid) {
-        logisticsService.getLogistics(tid);
+    public ResultVo<LogisticsInfoVo> read(@PathVariable String tid) {
+        return ResultVo.success(logisticsService.getLogistics(tid));
     }
 
     @ApiOperation("修改")
-    @PostMapping("/update/")
-    public void update(@RequestBody LogisticsUpdateRo logisticsUpdateRo) {
-        logisticsService.updateLogistics(logisticsUpdateRo);
+    @PostMapping("/update/{tid}")
+    public void update(@RequestBody LogisticsUpdateRo logisticsUpdateRo, @PathVariable String tid) {
+        logisticsService.updateLogistics(logisticsUpdateRo, tid);
     }
 
     @ApiOperation("删除")

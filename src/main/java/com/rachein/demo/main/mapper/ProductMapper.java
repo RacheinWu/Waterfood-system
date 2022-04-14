@@ -12,11 +12,11 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface ProductMapper extends BaseMapper<Product> {
 
-    @Select("select name, weight, origin_place as originPlace, " +
+    @Select("select trans_id as tid ,name, weight, origin_place as originPlace, " +
             "leave_water_time as leaveWaterDateTime, " +
             "arrive_time as arriveTime, specification " +
             "from t_product " +
             "where qr_number = ${qr}")
-    ProductInfoVo read(@Param("qr") String qr);
+    ProductInfoVo getProductInfo(@Param("qr") String qr);
 
 }

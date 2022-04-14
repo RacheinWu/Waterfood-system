@@ -14,7 +14,7 @@ public interface LogisticsService {
 
     LogisticsInfoVo getLogistics(String tid);
 
-    void updateLogistics(LogisticsUpdateRo logisticsUpdateRo);
+    void updateLogistics(LogisticsUpdateRo logisticsUpdateRo, String id);
 
     void removeLogistics(String tid);
 

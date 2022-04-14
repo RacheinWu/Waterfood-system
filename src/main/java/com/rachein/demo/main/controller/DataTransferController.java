@@ -35,6 +35,7 @@ public class DataTransferController {
     public ResultVo<Map<String, Object>> getByQR(@PathVariable String qr) {
         Map<String, Object> map = new HashMap<>();
         ProductInfoVo productInfo = productService.readProductInfo(qr);
+        System.out.println(productInfo);
         LogisticsInfoVo logisticsInfo = logisticsService.getLogistics(productInfo.getTid());
         map.put("product", productInfo);
         map.put("logistics", logisticsInfo);

@@ -36,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductInfoVo readProductInfo(String id) {
         ProductInfoVo productInfoVo;
-        productInfoVo = productMapper.read(id);
+        productInfoVo = productMapper.getProductInfo(id);
         //如果没有结果
         if (Objects.isNull(productInfoVo))
             throw new GlobalException(CodeMsg.QUERY_NOT_RESULT);

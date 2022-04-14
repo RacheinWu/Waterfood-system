@@ -1,5 +1,6 @@
 package com.rachein.demo.main.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.rachein.demo.entity.DB.Product;
 import com.rachein.demo.entity.DB.Trans;
 import com.rachein.demo.entity.RO.LogisticsAddRo;
@@ -74,12 +75,26 @@ public class LogisticsServiceImpl implements LogisticsService {
     }
 
     @Override
-    public void updateLogistics(LogisticsUpdateRo logisticsUpdateRo) {
-
+    public void updateLogistics(LogisticsUpdateRo logisticsUpdateRo, String id) {
+        if (Objects.isNull(logisticsUpdateRo))
+            throw new GlobalException(CodeMsg.BIND_ERROR);
+        //判断是否存在:
+        if (transMapper.selectCount(new QueryWrapper<Trans>()
+                .eq("id", id)) == 0) {
+            throw new GlobalException(CodeMsg.LOGISTICS_NOT_EXIT);
+        }
+        Trans newTrans = new Trans();
+        newTrans.setId(id);
+        BeanUtils.copyProperties(logisticsUpdateRo, newTrans);
+        transMapper.updateById(newTrans);
     }
 
     @Override
     public void removeLogistics(String tid) {
-
+        if (transMapper.selectCount(new QueryWrapper<Trans>()
+                .eq("id", tid)) == 0) {
+            throw new GlobalException(CodeMsg.LOGISTICS_NOT_EXIT);
+        }
+        transMapper.deleteById(tid);
     }
 }
