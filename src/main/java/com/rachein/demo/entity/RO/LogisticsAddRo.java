@@ -1,0 +1,28 @@
+package com.rachein.demo.entity.RO;
+
+import com.rachein.demo.entity.VO.ProductVo;
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @author 计算机系 ITAEM 吴远健
+ * @Description
+ * @date 2022/4/14 11:28
+ */
+@Data
+public class LogisticsAddRo {
+
+    private String departure;
+    private String destination;
+    private String vehicle;//粤BWY231
+    private String driver;
+    private String contact;
+    private Date departureDatetime;
+    private Date loadTime;
+    private String description;
+    private List<String> productQRCodes;
+    private ProductVo product;
+}
