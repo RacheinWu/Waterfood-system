@@ -11,4 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Api("用户")
 @RequestMapping("user")
 public class UserController {
+
+
 }
