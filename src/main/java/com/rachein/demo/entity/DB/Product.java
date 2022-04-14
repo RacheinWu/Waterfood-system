@@ -34,6 +34,10 @@ public class Product {
     @TableField("qr_number")
     private String qrNumber;
 
+    @TableField("departure_datetime")
+    private Date departureDatetime;
+
+
     @TableField("status_id")
     private int statusId;
 

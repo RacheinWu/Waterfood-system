@@ -3,7 +3,6 @@ package com.rachein.demo.entity.RO;
 import com.rachein.demo.entity.VO.ProductVo;
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +17,7 @@ public class LogisticsAddRo {
     private String departure;
     private String destination;
     private String vehicle;//粤BWY231
+    private String vehicleId;
     private String driver;
     private String contact;
     private Date departureDatetime;

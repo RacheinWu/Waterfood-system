@@ -27,7 +27,7 @@ public class CodeMsg {
 
 
     //查询类 503xx:
-    public static CodeMsg ITEM_NOT_EXIT = new CodeMsg(50301, "物品不存在!");
+    public static CodeMsg QUERY_NOT_RESULT = new CodeMsg(50301, "查询无结果!");
 
 
 

@@ -2,20 +2,21 @@ package com.rachein.demo.main.service;
 
 import com.rachein.demo.entity.RO.LogisticsAddRo;
 import com.rachein.demo.entity.RO.LogisticsUpdateRo;
+import com.rachein.demo.entity.VO.LogisticsInfoVo;
 
 /**
  * @author 计算机系 ITAEM 吴远健
- * @Description
+ * @Description 物流事物类
  * @date 2022/4/14 11:39
  */
 public interface LogisticsService {
-    void add(LogisticsAddRo logisticsAddRo);
+    void addLogisticsProduct(LogisticsAddRo logisticsAddRo);
 
-    void read(String tid);
+    LogisticsInfoVo getLogistics(String tid);
 
-    void update(LogisticsUpdateRo logisticsUpdateRo);
+    void updateLogistics(LogisticsUpdateRo logisticsUpdateRo);
 
-    void delete(String tid);
+    void removeLogistics(String tid);
 
 
 }

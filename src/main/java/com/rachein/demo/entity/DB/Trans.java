@@ -28,7 +28,7 @@ public class Trans {
     private String description;
     private BigDecimal weight;
     @TableField("departure_datetime")
-    private String departureDatetime;
+    private Date departureDatetime;
     @TableField("arrive_datetime")
     private Date arriveTime;
     @TableField("product_name")
@@ -36,5 +36,4 @@ public class Trans {
     @TableField("load_time")
     private Date loadTime;
     private String vehicle;
-    private String status;
 }
